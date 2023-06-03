@@ -20,7 +20,7 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet:
         else if x > elem then NonEmpty(elem, left, right.incl(x))
         else this
     def union(other: IntSet) = 
-        left.union(right).union(s).incl(elem)
+        left.union(right).union(other).incl(elem)
         
 end NonEmpty
 
