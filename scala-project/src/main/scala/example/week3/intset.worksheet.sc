@@ -4,6 +4,11 @@ abstract class IntSet:
     def union(other: IntSet): IntSet
 end IntSet
 
+object IntSet:
+    def apply(): IntSet = Empty()
+    def apply(x: Int): IntSet = Empty().incl(x)
+    def apply(x: Int, y: Int): IntSet = Empty().incl(x).incl(y)
+
 class Empty() extends IntSet:
     def contains(x: Int): Boolean = false
     def incl(x: Int): IntSet = NonEmpty(x, Empty(), Empty())
@@ -24,8 +29,5 @@ class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet:
         
 end NonEmpty
 
-object IntSet:
-    def singleton(x: Int) = NonEmpty(x, Empty(), Empty())
 
-
-IntSet.singleton(1)
+IntSet(1)
