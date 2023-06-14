@@ -28,4 +28,3 @@ val two = Succ(Succ(Zero))
 val one = Succ(Zero)
 two + one
 two - one
-one - two
